@@ -1,0 +1,29 @@
+body {
+
+}
+
+.container {
+    display: flex;
+}
+
+.targeta1,
+.targeta2 {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+.ciruclo {
+    padding: 20px;
+}
+
+#boton {
+    font-size: 16px;
+    padding: 10px 20px;
+}
+
+div{
+    display: inline;
+    margin-left: 10px;
+}
