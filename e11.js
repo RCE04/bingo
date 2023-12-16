@@ -5,7 +5,7 @@ var numero
 const ruleta = function () {
 
     setInterval(() => {
-        numero = Math.floor(Math.random() * 100)
+        numero = (Math.floor(Math.random() * 89) + 1)
         let boton = document.getElementById("boton")
         if (sali.length !== 100) {
             comprobar()
@@ -28,7 +28,7 @@ const asignar = function () {
         let sali2 = []
         for (let index = 0; index < 15; index++) {
             let nuevaEtiqueta = document.createElement("div")
-            let generarN = (Math.floor(Math.random() * 50) + 51)
+            let generarN = (Math.floor(Math.random() * 89) + 1)
 
             if (sali2.includes(generarN)) {
                 index--;
@@ -47,7 +47,7 @@ const asignar = function () {
         let sali2 = []
         for (let index = 0; index < 15; index++) {
             let nuevaEtiqueta = document.createElement("div")
-            let generarN = Math.floor(Math.random() * 50)
+            let generarN = (Math.floor(Math.random() * 89) + 1)
 
             if (sali2.includes(generarN)) {
                 index--;
@@ -67,7 +67,7 @@ function comprobar() {
     if (sali.length !== 100) {
         for (let i = 0; i < sali.length; i++)
             if (sali[i] == numero) {
-                numero = Math.floor(Math.random() * 100)
+                numero = (Math.floor(Math.random() * 89) + 1)
                 comprobar()
             }
     }
