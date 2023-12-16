@@ -11,18 +11,20 @@ body {
     text-align: center;
     padding: 20px;
     border: 30px solid black;
-    background-color: red;
+    background-color: rgb(255, 0, 0);
     width: 33%;
 }
 
 h1{
     background-color: white;
+    font-size: 25px;
 }
 
 .ciruclo {
-    margin-left:15%;
+    margin-left:7%;
     margin-top: 5%;
     width: 33%;
+    font-size: 25px;
 }
 
 
@@ -35,6 +37,7 @@ div{
     background-color: white;
     display: inline;
     margin-left: 10px;
+    font-size: 25px;
 }
 
 #des{
