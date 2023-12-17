@@ -2,6 +2,9 @@ var sali = []
 var nuevoElemento
 var numero
 
+var contJ = 0
+var contCPU = 0
+
 const ruleta = function () {
     let cont = 0;
 
@@ -29,7 +32,7 @@ const ruleta = function () {
         }
 
 
-    }, 1)
+    }, 100)
 }
 
 const asignar = function () {
@@ -44,14 +47,14 @@ const asignar = function () {
                 index--;
             } else {
                 nuevaEtiqueta.textContent = generarN;
-                document.getElementById("cartaJ").appendChild(nuevaEtiqueta)
+                document.getElementById("nJ").appendChild(nuevaEtiqueta)
                 nuevaEtiqueta.setAttribute("class", generarN)
                 sali2.push(generarN)
 
             }
         }
         let saltoL = document.createElement("br")
-        document.getElementById("cartaJ").appendChild(saltoL)
+        document.getElementById("nJ").appendChild(saltoL)
     }
 
     for (let index = 0; index < 3; index++) {
@@ -64,14 +67,14 @@ const asignar = function () {
                 index--;
             } else {
                 nuevaEtiqueta.textContent = generarN;
-                document.getElementById("cartaCPU").appendChild(nuevaEtiqueta)
+                document.getElementById("nCPU").appendChild(nuevaEtiqueta)
                 nuevaEtiqueta.setAttribute("class", generarN)
                 sali2.push(generarN)
 
             }
         }
         let saltoL = document.createElement("br")
-        document.getElementById("cartaCPU").appendChild(saltoL)
+        document.getElementById("nCPU").appendChild(saltoL)
     }
 }
 
@@ -86,15 +89,72 @@ function comprobar() {
 }
 
 function marcar() {
-    let div = document.getElementsByClassName(numero)
+    let cartaJ = document.getElementById("nJ")
+    cartaJ = cartaJ.getElementsByClassName(numero)
 
-    if (div.length > 0) {
-        for (i = 0; i < div.length; i++) {
-            div[i].style.backgroundColor = 'rgb(255, 0, 0)'
-        }
+    let cartaCPU = document.getElementById("nCPU")
+    cartaCPU = cartaCPU.getElementsByClassName(numero)
+
+
+
+
+    for (i = 0; i < cartaJ.length; i++) {
+        cartaJ[i].style.backgroundColor = 'rgb(255, 0, 0)'
     }
 
+
+    for (j = 0; j < cartaJ.length; j++)
+        if (cartaJ[j].hasAttribute("style"))
+            contJ++
+
+
+
+    for (i = 0; i < cartaCPU.length; i++) {
+        cartaCPU[i].style.backgroundColor = 'rgb(255, 0, 0)'
+    }
+
+    for (j = 0; j < cartaCPU.length; j++)
+        if (cartaCPU[j].hasAttribute("style"))
+            contCPU++
+    ganar()
+
 }
+
+
+
+let contV = false
+function ganar() {
+    if (!contV) {
+        if (contJ === 45) {
+            alert("ha ganado jugador")
+            contV = true
+        } else if (contCPU === 45) {
+            alert("ha ganado CPU")
+            contV = true
+        } else if (contJ === 45 && contCPU === 45) {
+            alert("Empate")
+            contV = true
+        }
+    }
+}
+
+
+
+/*function ganar() {
+    if (!ganadorDeclarado) {
+        if (contJ === 45) {
+            alert("¡Ha ganado el jugador!");
+            ganadorDeclarado = true; // Marcar que ya se declaró un ganador
+        } else if (contCPU === 45) {
+            alert("¡Ha ganado la CPU!");
+            ganadorDeclarado = true; // Marcar que ya se declaró un ganador
+        } else if (contJ === 45 && contCPU === 45) {
+            alert("¡Es un empate!");
+            ganadorDeclarado = true; // Marcar que ya se declaró un ganador
+        }
+    }
+}
+*/
 
 
 
