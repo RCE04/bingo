@@ -137,25 +137,3 @@ function ganar() {
         }
     }
 }
-
-
-
-/*function ganar() {
-    if (!ganadorDeclarado) {
-        if (contJ === 45) {
-            alert("¡Ha ganado el jugador!");
-            ganadorDeclarado = true; // Marcar que ya se declaró un ganador
-        } else if (contCPU === 45) {
-            alert("¡Ha ganado la CPU!");
-            ganadorDeclarado = true; // Marcar que ya se declaró un ganador
-        } else if (contJ === 45 && contCPU === 45) {
-            alert("¡Es un empate!");
-            ganadorDeclarado = true; // Marcar que ya se declaró un ganador
-        }
-    }
-}
-*/
-
-
-
-
